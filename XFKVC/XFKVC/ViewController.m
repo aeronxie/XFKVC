@@ -7,23 +7,54 @@
 //
 
 #import "ViewController.h"
+#import "NSObject+KVC.h"
 
 @interface ViewController ()
-
+//@property (nonatomic, assign) NSInteger age;
+//@property (nonatomic,   copy) NSString *name;
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    NSInteger age;
+    NSInteger _age;
+    NSInteger _isAge;
+    NSInteger isAge;
+    NSString *name;
+    
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+//    age = 10;
+    _age = 11;
+    _isAge = 12;
+    isAge = 13;
+    name = @"hello world!";
+//    [self valueForKey:@""];_<key>, _is<Key>, <key>, or is<Key>
+    NSLog(@"name:%@-------age:%@",[self xf_valueForKey:@"name"],[self xf_valueForKey:@"age"]);
 }
+
+
+
+//- (NSInteger)getAge {
+//    return 10;
+//}
+
+//- (NSInteger)age {
+//    return 101;
+//}
+
+//- (NSInteger)isAge {
+//    return 102;
+//}
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 @end
