@@ -15,8 +15,8 @@
 @end
 
 @implementation ViewController {
-    NSInteger age;
-    NSInteger _age;
+//    NSInteger age;
+//    NSInteger _age;
     NSInteger _isAge;
     NSInteger isAge;
     NSString *name;
@@ -27,11 +27,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    age = 10;
-    _age = 11;
+//    _age = 11;
     _isAge = 12;
     isAge = 13;
     name = @"hello world!";
-//    [self valueForKey:@""];_<key>, _is<Key>, <key>, or is<Key>
     NSLog(@"name:%@-------age:%@",[self xf_valueForKey:@"name"],[self xf_valueForKey:@"age"]);
 }
 

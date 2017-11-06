@@ -78,9 +78,7 @@ function(self, ivar, result);
                 // 找到符合要求的ivar，根据对象类型进行相应操作
                 const char *ivarType = ivar_getTypeEncoding(ivars[i]);
                 if (*ivarType != '@') { // 非指针对象
-#warning error function
-//                    NSNumber *result = [self getValueForIvar:ivars[i]];
-//                    return result;
+                    return [self getValueForIvar:ivars[i]];
                 }
                 //指针对象
                 id ivarValue = object_getIvar(self, ivars[i]);
@@ -204,7 +202,7 @@ function(self, ivar, result);
     }
 }
 
-- (NSNumber *)getValueForIvar:(Ivar)ivar {
+- (id)getValueForIvar:(Ivar)ivar {
     const char *type = ivar_getTypeEncoding(ivar);
     if (strcmp(type, @encode(double)) == 0) {
         double (* function)(id, Ivar) = (double(*)(id, Ivar))object_getIvar;
